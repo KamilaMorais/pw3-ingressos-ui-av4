@@ -48,7 +48,7 @@ A implementação deve seguir os mesmos padrões de arquitetura e codificação 
 
 ## 2. Endpoints da API back-end
 
-A API está rodando na rede interna em `http://172.16.48.4:8080/salas`. Os endpoints disponíveis para a entidade Sala são:
+A API está rodando na rede interna em `http://192.168.2.159:8090/salas`. Os endpoints disponíveis para a entidade Sala são:
 
 | Método | Endpoint | Descrição | Corpo da requisição (payload) | Retorno HTTP |
 | :--- | :--- | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ A API está rodando na rede interna em `http://172.16.48.4:8080/salas`. Os endpo
 | `PUT` | `/salas/{id}` | Atualiza uma sala existente | `{"nome": string, "preco": number}` | `200 OK` com os dados atualizados |
 | `DELETE` | `/salas/{id}` | Inativa/remove uma sala pelo ID | Nenhum | `204 No Content` |
 
-Obs.: Consulte a documentação em http://172.16.48.4:8080/swagger-ui.html
+Obs.: Consulte a documentação em http://192.168.2.159:8090/swagger-ui.html
 
 ---
 
