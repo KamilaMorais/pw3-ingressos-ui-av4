@@ -11,22 +11,23 @@ export class SalaService {
   private http = inject(HttpClient);
   private apiUrl = 'http://172.16.48.4:8080/salas';
 
-  listarAtivasSala(): Observable<Sala[]> {
+  listarSalasAtivas(): Observable<Sala[]> {
     return this.http.get<Sala[]>(`${this.apiUrl}`);
   }
 
-  buscarPorIdSala(id: Number): Observable<Sala>{
+  buscarSalaPorId(id: Number): Observable<Sala>{
     return this.http.get<Sala>(`${this.apiUrl}/${id}`);
   }
 
-  salvarSala(sala: Sala): Observable<Sala>{
-                                    if(sala.id){
-                                        return this.http.put<Sala>(`${this.apiUrl}/${sala.id}`, sala);
-                                    }
-                                    return this.http.post<Sala>(this.apiUrl, sala);
+  salvarSala(sala: Sala): Observable<Sala>
+  {
+    if(sala.id){
+      return this.http.put<Sala>(`${this.apiUrl}/${sala.id}`, sala);
+    }
+    return this.http.post<Sala>(this.apiUrl, sala);
   }
 
   deletarSala(id: number): Observable<void>{
-                                                return this.http.delete<void>(`${this.apiUrl}/${id}`)
+    return this.http.delete<void>(`${this.apiUrl}/${id}`)
   }
 }

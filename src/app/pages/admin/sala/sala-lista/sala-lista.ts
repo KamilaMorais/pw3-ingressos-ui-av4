@@ -21,8 +21,15 @@ export class SalaListaComponent {
    private route = inject(ActivatedRoute);
 
    ngOnInit(): void {
-    this.salas = this.salaService.listarAtivasSala();
+    this.salas = this.salaService.listarSalasAtivas();
    }
 
+    edit(): void{
+    this.salaService.salvarSala(sala).subscribe;
+    this.router.navigate(['../formulario', id]);
+  }
    
+    delete(): void{
+    this.salaService.deletarSala(id).subscribe;
+  }
 }
